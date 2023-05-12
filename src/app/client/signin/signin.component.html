@@ -1,0 +1,180 @@
+
+
+<body>
+	<div class="main">  	
+		<input type="checkbox" id="chk" aria-hidden="true">
+
+			<div class="signup">
+				<form
+        *ngIf="!isSuccessful"
+        name="form"
+        (ngSubmit)="f.form.valid && onSubmit1()"
+        #f="ngForm"
+        novalidate
+        >
+					<label for="chk" aria-hidden="true">Sign up</label>
+					<input type="text" name="nom" placeholder="              Please entre your Firstname" 
+          name="nom"
+          [(ngModel)]="form.nom"
+          required
+          minlength="3"
+          maxlength="20"
+          #nom="ngModel"
+          [ngClass]="{ 'is-invalid': f.submitted && nom.errors }">
+          <div class="invalid-feedback" *ngIf="nom.errors && f.submitted">
+            <div *ngIf="nom.errors['required']">Nom is required</div>
+            <div *ngIf="nom.errors['minlength']">
+              Nom must be at least 3 characters
+            </div>
+            <div *ngIf="nom.errors['maxlength']">
+              Nom must be at most 20 characters
+            </div>
+          </div>
+					
+          <input type="text" name="prenom" placeholder="              Please entre your Lastname" 
+          [(ngModel)]="form.prenom"
+          required
+          minlength="3"
+          maxlength="20"
+          #prenom="ngModel"
+          [ngClass]="{ 'is-invalid': f.submitted && prenom.errors }"
+        />
+        <div class="invalid-feedback" *ngIf="prenom.errors && f.submitted">
+          <div *ngIf="prenom.errors['required']">prenom is required</div>
+          <div *ngIf="prenom.errors['minlength']">
+            prenom must be at least 3 characters
+          </div>
+          <div *ngIf="prenom.errors['maxlength']">
+            prenom must be at most 20 characters
+          </div>
+        </div>
+         
+        <input type="password" name="username" placeholder="              Please entre your username"  type="text"
+        [(ngModel)]="form.username"
+        required
+        minlength="3"
+        maxlength="20"
+        #username="ngModel"
+        [ngClass]="{ 'is-invalid': f.submitted && username.errors }">
+
+        <div class="invalid-feedback" *ngIf="username.errors && f.submitted">
+          <div *ngIf="username.errors['required']">Username is required</div>
+          <div *ngIf="username.errors['minlength']">
+            Username must be at least 3 characters
+          </div>
+          <div *ngIf="username.errors['maxlength']">
+            Username must be at most 20 characters
+          </div>
+          </div>
+
+          <input type="text" name="password" placeholder="              Please entre your password"  type="password"
+          [(ngModel)]="form.password"
+          required
+          minlength="6"
+          #password="ngModel"
+          [ngClass]="{ 'is-invalid': f.submitted && password.errors }">
+          <div class="invalid-feedback" *ngIf="password.errors && f.submitted">
+            <div *ngIf="password.errors['required']">Password is required</div>
+            <div *ngIf="password.errors['minlength']">
+              Password must be at least 6 characters
+            </div>
+          </div>
+
+
+          
+					<input type="email" name="email" placeholder="              Please entre your Email"  
+          name="email"
+          [(ngModel)]="form.email"
+          required
+          email
+          #email="ngModel"
+          [ngClass]="{ 'is-invalid': f.submitted && email.errors }"
+        />
+        <div class="invalid-feedback" *ngIf="email.errors && f.submitted">
+          <div *ngIf="email.errors['required']">Email is required</div>
+          <div *ngIf="email.errors['email']">
+            Email must be a valid email address
+          </div>
+        </div>
+      
+        <input   name="dateNaissance" type="datetime-local"
+         placeholder="              Please entre your birth date"
+          [(ngModel)]="form.dateNaissance"
+          required
+          #dateNaissance="ngModel"
+          [ngClass]="{ 'is-invalid': f.submitted && dateNaissance.errors }"
+        />
+
+        <div class="form-group" id="role-checkboxes">
+          <div class="form-check">
+            <input class="form-check-input" type="checkbox" value="ROLE_ADMIN" name="role" (change)="onRoleChange($event)">
+            <label class="form-check-label">Admin</label>
+          </div>
+          <div class="form-check">
+            <input class="form-check-input" type="checkbox" value="ROLE_ETUDIANT" name="role" (change)="onRoleChange($event)">
+            <label class="form-check-label">Etudiant</label>
+          </div>
+          <div class="form-check">
+            <input class="form-check-input" type="checkbox" value="ROLE_UNIVERSITE" name="role" (change)="onRoleChange($event)">
+            <label class="form-check-label">Universite</label>
+          </div>
+        </div>
+        <div class="forget-password-container">
+
+        <div class="small"><a style="color: black;" routerLink="/client/forgetpassword">Forget Password</a></div>
+        </div>
+        <button mat-raised-button color="primary" (click)="onImageOptions()">Image Options</button>
+
+          <button>Sign up</button>
+				</form>
+			</div>
+
+			<div class="login">
+        
+        <form
+        *ngIf="!isLoggedIn"
+        name="form"
+        (ngSubmit)="f.form.valid && onSubmit()"
+        #f="ngForm"
+        novalidate
+        >
+					<label for="chk" aria-hidden="true">Login</label>
+
+          <input type="username" name="username" placeholder="Email" 
+          
+                                    name="username"
+                                    [(ngModel)]="form.username"
+                                    required
+                                    #username="ngModel"
+                                    [ngClass]="{ 'is-invalid': f.submitted && username.errors }"
+                                    >
+                                    <div *ngIf="username.errors && f.submitted" class="invalid-feedback">
+                                      Username is required!
+                                    </div>
+
+          <input type="password" name="password" placeholder="Password" required=""
+                                    [(ngModel)]="form.password"
+                                    required
+                                    minlength="6"
+                                    #password="ngModel"
+                                    [ngClass]="{ 'is-invalid': f.submitted && password.errors }"
+                                    >
+                                    <div *ngIf="password.errors && f.submitted" class="invalid-feedback">
+                                      <div *ngIf="password.errors['required']">Password is required</div>
+                                      <div *ngIf="password.errors['minlength']">
+                                        Password must be at least 6 characters
+                                      </div>
+                                    </div>
+                                    <div class="forget-password-container">
+                                      <div class="small"><a style="color: black;" routerLink="/client/forgetpassword">Forget Password</a></div>
+                                      </div>
+          <button>Login</button>
+          <div >
+            <div *ngIf="f.submitted && isLoginFailed" class="alert alert-danger" role="alert">
+              Login failed: {{ errorMessage }}
+            </div>
+          </div>
+        </form>
+			</div>
+	</div>
+</body>

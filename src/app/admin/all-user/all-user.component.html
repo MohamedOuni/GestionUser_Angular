@@ -1,0 +1,47 @@
+<div id="layoutAuthentication">
+    <div id="layoutAuthentication_content">
+        <main>
+            <div class="container">
+                <div class="row justify-content-center">
+                    <div class="col-lg-9">
+                        <div class="card shadow-lg border-0 rounded-lg mt-5">
+                            <div class="card-header"><h3 class="text-center font-weight-light my-4">All Users</h3></div>
+                            <div class="card-body">
+                                <form>
+                                    <div class="input-group mb-3">
+                                      <input type="text" class="form-control" placeholder="Search by username" [(ngModel)]="searchTerm" name="searchTerm">
+                                      <div class="input-group-append">
+                                        <button class="btn btn-primary" type="button" (click)="search()">Search</button>
+                                      </div>
+                                    </div>
+                                  </form>
+<table class="table table-striped">
+    <thead>
+      <tr>
+        <th scope="col">ID</th>
+        <th scope="col">Username</th>
+        <th scope="col">Email</th>
+        <th scope="col">Prenom</th>
+        <th scope="col">Nom</th>
+        <th scope="col">Date Naissance</th>
+      </tr>
+    </thead>
+        <tbody>
+            <tr *ngFor="let user of filteredUsers">
+              <td>{{ user.id_user }}</td>
+              <td>{{ user.username }}</td>
+              <td>{{ user.email }}</td>
+              <td>{{ user.prenom }}</td>
+              <td>{{ user.nom }}</td>
+              <td>{{ user.dateNaissance }}</td>
+            </tr>
+          </tbody>
+  </table>
+</div>
+</div>
+</div>
+</div>
+</div>
+</main>
+</div>
+

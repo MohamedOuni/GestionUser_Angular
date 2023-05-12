@@ -1,0 +1,4 @@
+.cdk-global-overlay-wrapper {
+    z-index: 99999999999999999999999999999;
+    /* adjust this value as needed */
+}

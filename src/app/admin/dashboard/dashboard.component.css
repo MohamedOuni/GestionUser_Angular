@@ -1,0 +1,23 @@
+.chart-container {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 85%;
+    height: 75vh;
+    max-height: 70%;
+    margin-top: 90px; 
+    margin-left: 250px;
+  }
+
+
+  
+  canvas {
+    max-width: 60%;
+    max-height: 85%;
+  }
+
+  button.active {
+    background-color: #4CAF50;
+    transition: background-color 0.5s ease;
+  }

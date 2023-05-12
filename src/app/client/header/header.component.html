@@ -1,0 +1,58 @@
+
+<nav class="navbar navbar-expand-lg bg-white navbar-light shadow-sm px-5 py-3 py-lg-0">
+    <a href="#" class="navbar-brand p-0">
+        <h1 style="color: #d24d4d;"><i class="far fa-smile" style="color: #d24d4d;"></i>EspritMobilite</h1>
+    </a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarCollapse">
+        <div class="navbar-nav ms-auto py-0 me-n3">
+            <a routerLink="/client/home" class="nav-item nav-link active">Home</a>
+            <a routerLink="/client/university-home" class="nav-item nav-link" *ngIf="isLoggedIn2() !== false">Universities</a>
+            <a routerLink="/client/partnership-request" class="nav-item nav-link" *ngIf="isLoggedIn2() !== false">Partnership</a>
+
+            <div class="nav-item dropdown"*ngIf="isLoggedIn2() !== false">
+                <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">Forum</a>
+                <div class="dropdown-menu m-0">
+                    <a routerLink="/client/forum" class="dropdown-item">Post</a>
+                    <a routerLink="post/create" class="dropdown-item">Create new Post</a>
+                    <a routerLink="/client/posts" class="dropdown-item">Chercher Post</a>
+                </div>
+            </div>
+
+            <div class="nav-item dropdown"*ngIf="isLoggedIn2() !== false">
+                <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">Mobilite</a>
+                <div class="dropdown-menu m-0">
+                    <a routerLink="/client/mobilite" class="dropdown-item">Mobility Announcment</a>
+                    <a routerLink="/client/AccomodationList" class="dropdown-item">Hebergement Announcment</a>
+                </div>
+            </div>
+            
+                    <a *ngIf="isLoggedIn2() !== false" routerLink="/client/ance" class="dropdown-item" class="nav-item nav-link" data-bs-toggle="dropdown">Liste des Annonces</a>
+          
+                    <a *ngIf="isLoggedIn2() !== false" routerLink="/client/followUps" class="nav-item nav-link" data-bs-toggle="dropdown">Vos Follow Ups</a>
+
+
+        
+                    <a *ngIf="isLoggedIn2() !== false"routerLink="/client/ouuuuu"class="nav-item nav-link" data-bs-toggle="dropdown">Vos Candidature </a>
+
+        
+
+            
+                <a *ngIf="isLoggedIn2() !== false"  routerLink="/client/listAppointments" class="nav-item nav-link" data-bs-toggle="dropdown">University appointments</a>             
+                <a *ngIf="isLoggedIn2() !== false"  routerLink="/client/myAppointments" class="nav-item nav-link"  data-bs-toggle="dropdown">My appointments</a>             
+                <a *ngIf="isLoggedIn2() !== false" routerLink="/client/complaints" class="nav-item nav-link"  data-bs-toggle="dropdown">My Complaints</a>             
+
+            <a routerLink="/" class="nav-item nav-link active"  routerLink="/client/signin" *ngIf="isLoggedIn2() !== true">Signin</a>
+            <div class="nav-item dropdown" *ngIf="isLoggedIn2() !== false">
+                <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">User</a>
+                <div class="dropdown-menu m-0">
+                    <a routerLink="/client/updateprofile" class="dropdown-item">Setting</a>
+                    <a routerLink="/client/profile" class="dropdown-item">Profile</a>
+                    <a routerLink="/client/signin"  class="dropdown-item" (click)="logout()">logout</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</nav>

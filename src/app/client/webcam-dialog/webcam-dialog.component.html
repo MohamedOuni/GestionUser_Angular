@@ -1,0 +1,8 @@
+<h2 mat-dialog-title>Capture Image with Webcam</h2>
+<mat-dialog-content>
+  <webcam [width]="640" [height]="480" [trigger]="triggerObservable" (imageCapture)="onImageCapture($event)"></webcam>
+</mat-dialog-content>
+<mat-dialog-actions>
+  <button mat-button (click)="captureImage()">Capture</button>
+  <button mat-button mat-dialog-close>Cancel</button>
+</mat-dialog-actions>

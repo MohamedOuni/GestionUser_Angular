@@ -1,0 +1,46 @@
+<div id="layoutAuthentication">
+    <div id="layoutAuthentication_content">
+        <main>
+            <div class="container">
+                <div class="row justify-content-center">
+                    <div class="col-lg-7">
+                        <div class="card shadow-lg border-0 rounded-lg mt-5">
+                            <div class="card-header"><h3 class="text-center font-weight-light my-4">Your Information</h3></div>
+                            <div class="card-body">
+                              <div class="image-container">
+                                <img [src]="userPhotoUrl" alt="Photo" class="user-photo">
+                              </div>
+  <table class="table table-bordered">
+      <tr>
+        <th>Nom</th>
+        <td>{{ user.nom }}</td>
+      </tr>
+      <tr>
+        <th>Prénom</th>
+        <td>{{ user.prenom }}</td>
+      </tr>
+      <tr>
+        <th>Email</th>
+        <td>{{ user.email }}</td>
+      </tr>
+      <tr>
+        <th>Date de naissance</th>
+        <td>{{ user.dateNaissance }}</td>
+      </tr>
+      <button mat-raised-button color="warn" (click)="openDeleteDialog()">Supprimer le compte</button>
+    </table>
+  </div>
+  </div>
+  </div>
+  </div>
+  </div>
+  </main>
+  </div>
+
+  </div>
+  
+  
+  
+  
+  
+  

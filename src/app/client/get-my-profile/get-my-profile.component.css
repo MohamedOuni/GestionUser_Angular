@@ -1,0 +1,12 @@
+.image-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+  }
+  
+  .user-photo {
+    max-width: 30%;
+    max-height: 30%;
+    margin: auto;
+  }

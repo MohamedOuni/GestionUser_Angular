@@ -1,0 +1,4 @@
+<div class="chart-container">
+    <canvas baseChart [datasets]="chartType === 'pie' ? pieChartData : barChartData" [labels]="chartType === 'pie' ? pieChartLabels : barChartLabels" [type]="chartType"></canvas>
+    <button (click)="toggleChartType()" [class.active]="chartType === 'bar'">Toggle Chart Type</button>
+</div>

@@ -1,0 +1,9 @@
+<h1 mat-dialog-title>Supprimer le compte</h1>
+<div mat-dialog-content>
+  <p>Veuillez saisir votre mot de passe actuel pour confirmer la suppression de votre compte :</p>
+  <input type="password" [(ngModel)]="currentPassword" placeholder="Mot de passe actuel">
+</div>
+<div mat-dialog-actions>
+  <button mat-button (click)="dialogRef.close()">Annuler</button>
+  <button mat-raised-button color="warn" (click)="openDeleteDialog()">Supprimer le compte</button>
+</div>
